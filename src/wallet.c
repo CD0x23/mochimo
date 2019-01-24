@@ -946,7 +946,7 @@ void init_seed(char *seed, unsigned len)
    printf("Enter a random string of up to %d characters:\n"  
           "(You DO NOT need to remember this.)\n", len);
    tgets(seed, len);
-   fp = fopen("/dev/random", "rb");
+   fp = fopen("/dev/urandom", "rb");
    if(fp) {
       for( ; len; len--) {
          if(fread(&b, 1, 1, fp) != 1) break;
